@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>Cygwin のインストールについて - 実験数学1</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="..">実験数学1</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../programming/">なぜプログラミング</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../jupyterhub/">JupyterHub</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">授業 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../lecture1/">C言語を試してみる (出力, if文)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../lecture2/">for文, while文, 関数</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../lecture3/">Juliaを試してみる</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../lecture4/">関数と配列の諸注意</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../lecture5/">連立一次方程式</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../lecture6/">Gram&ndash;Schmidt</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../lecture7/">数値積分</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../lecture8/">Fourier級数展開</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../lecture9/">常微分方程式1</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../lecture10/">常微分方程式2</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../lecture11/">特異値分解</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#cygwin">Cygwin のインストールについて</a></li>
+        <li class="first-level "><a href="#cygwin_1">Cygwin のインストールが終わったら</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="cygwin">Cygwin のインストールについて</h1>
+<ol>
+<li>
+<p><a href="https://www.cygwin.com/">Cygwin の web ページ</a> にアクセスし，Install Cygwin をクリックします．
+   <img src="../img/cygwin1.png" alt="cygwin1" width=60%></p>
+</li>
+<li>
+<p>exe ファイルをダウンロード（setup-x86_64.exe をクリック）します．あとは，実行して，画面に沿って進んでいくだけですが，インストールするパッケージを選択する画面で，gcc-core の最新版（数字が大きいもの）を選んでおくようにしてください．以下，画像で説明します．
+   <img src="../img/cygwin2.png" alt="cygwin2" width=60%></p>
+</li>
+<li>
+<p>ダウンロードフォルダ（あるいは，ダウンロード時に指定したフォルダ）に，setup-x86_64.exe があるので，ダブルクリックすると，次の画面があらわれます．「次へ」をクリックします．
+   <img src="../img/cygwin3.png" alt="cygwin3" width=60%></p>
+</li>
+<li>
+<p>Choose Installation Type：Install from Internet を選択します．
+   <img src="../img/cygwin4.png" alt="cygwin4" width=60%></p>
+</li>
+<li>
+<p>Choose Installation Directory：Root Directory の項目は，特にこだわりがなければデフォルトのままでよいでしょう．Install For の項目も，基本的には All Users を選択すればよいでしょう．
+   <img src="../img/cygwin5.png" alt="cygwin5" width=60%></p>
+</li>
+<li>
+<p>Select Local Package Directory：デフォルトのままでよいでしょう．
+   <img src="../img/cygwin6.png" alt="cygwin6" width=60%></p>
+</li>
+<li>
+<p>Select Connection Type：Direct Connection を選択します．
+   <img src="../img/cygwin7.png" alt="cygwin7" width=60%></p>
+</li>
+<li>
+<p>Chose Download Site(s)：末尾が .jp となっているものを選択します（.jp であればどれでも OK）．
+   <img src="../img/cygwin8.png" alt="cygwin8" width=60%></p>
+</li>
+<li>
+<p><strong>超重要</strong>　 Select Packages：① View の項目で Category を選択します．② Search の項目に gcc と入力します．③ gcc-core の行をみます．④ （Cygwin で初めて gcc-core をインストールする場合）Current 欄は 空白，New 欄は Skip になっているはずです．⑤ New 欄の右端の下向き三角形をクリックし，一番数字の大きいものを選択します．⑥ 「次へ」をクリックします．<br>
+   <img src="../img/cygwin9.png" alt="cygwin9" width=60%>
+   <img src="../img/cygwin10.png" alt="cygwin10" width=60%></p>
+</li>
+<li>
+<p>Review and confirm changes：「次へ」をクリックします（ボックスの中の記述は人によって違うかもしれませんが，気にしなくて大丈夫です）．</p>
+<p><img src="../img/cygwin11.png" alt="cygwin11" width=60%></p>
+</li>
+<li>
+<p>このまま進んでいけば，Cygwin のインストールは完了です．</p>
+<p><img src="../img/cygwin12.png" alt="cygwin12" width=60%>
+<img src="../img/cygwin13.png" alt="cygwin13" width=60%></p>
+</li>
+</ol>
+<h1 id="cygwin_1">Cygwin のインストールが終わったら</h1>
+<ol>
+<li>hello.c ファイルがどこにあるかを確認しましょう（以下は一例）．<br><img src="../img/cygwin15.png" alt="cygwin15" width=60%>
+   <img src="../img/cygwin16.png" alt="cygwin16" width=60%>
+   <img src="../img/cygwin17.png" alt="cygwin17" width=60%></li>
+<li>cygwin を立ち上げましょう（デスクトップにあればダブルクリック；なければスタートメニューから探します）．あとは，下の画像のように試してみましょう（一行書くごとにエンターキーを押します）．
+   <img src="../img/cygwin14.png" alt="cygwin14" width=60%></li>
+</ol></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>© 2021 Yuto Miyatake</small><br>
+            
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
